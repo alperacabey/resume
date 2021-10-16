@@ -275,6 +275,7 @@ a:not([href]):not([tabindex]) {
     display: flex;
     justify-content: space-between;
     align-items: end;
+    flex-wrap: wrap;
 }
 /*-------------------------------------------------------------------
 
