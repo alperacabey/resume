@@ -30,6 +30,11 @@ a {
   color: inherit;
 }
 
+hr {
+    margin: 10px 0px;
+    border-top: 2px solid #eee;
+}
+
 svg, img {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -48,15 +53,11 @@ a:focus {
     outline: none;
 }
 
-a[href^="tel:"] {
+/* a[href^="tel:"] {
     color: inherit;
     text-decoration: none;
-}
-
-img {
-    transition: all 0.3s;
-}
-
+} */
+/* 
 canvas {
   min-height: 100%;
   width: 100%;
@@ -65,7 +66,7 @@ canvas {
   padding: 0;
   margin: 0 0 -6px 0;
   overflow: hidden;
-}
+} */
 
 /* texts */
 
@@ -128,14 +129,9 @@ p {
     /* margin-bottom: 30px; */
 }
 
-ul {
-    list-style-type: square;
-    padding-left: 0;
-    p {
-        
-    }
+ol, ul {
+    padding-left: 20px;
 }
-
 strong,
 small {
     color: #333;
@@ -263,23 +259,6 @@ a:not([href]):not([tabindex]) {
   padding: 0;
 }
 
-.social-icons li {
-  display: inline-block;
-  margin-right: 20px;
-}
-
-.social-icons li:last-child {
-  margin-right: 0;
-}
-
-.social-icons li a {
-  color: #333;
-}
-
-.social-icons li a:hover {
-  opacity: .8;
-}
-
 .right-side {
   margin: 0;
   padding: 0;
@@ -292,6 +271,11 @@ a:not([href]):not([tabindex]) {
   position: relative;
 }
 
+.contact-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
 /*-------------------------------------------------------------------
 
                         1. Preloader
@@ -439,171 +423,6 @@ h2.menu-item:after {
     background: rgba(0, 0, 0, 0.1);
 }
 
-/* --- Inline Menu --- */
-
-.inline-menu-container {
-    background: #F1F3F6;
-    position: fixed;
-    height: 40px;
-    width: 69%;
-    right: 13px;
-    top: -50px;
-    transition: all 0.5s;
-    z-index: 1;
-}
-
-.inline-menu-container.showx {
-    top: 0;
-}
-
-.status {
-    color: #333;
-    line-height: 38px;
-    padding-left: 45px;
-}
-
-.status:before {
-    position: absolute;
-    top: 17px;
-    left: 25px;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #4dd133;
-    content: '';
-}
-
-.status:after {
-    position: absolute;
-    top: 13px;
-    left: 21px;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: #4dd133;
-    content: '';
-    opacity: 0.3
-}
-
-#close i {
-    font-size: 30px;
-    vertical-align: middle
-}
-
-.inline-menu {
-    float: right;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-right: 20px;
-}
-
-.inline-menu li {
-    display: inline-block;
-    cursor: pointer;
-    font-weight: 600;
-    line-height: 40px;
-    margin-top: -5px;
-    padding: 0 15px;
-    color: #666;
-}
-
-.inline-menu li.active,
-.inline-menu li:hover {
-    color: #333;
-}
-
-.inline-menu li.active {
-    cursor: text;
-}
-
-.inline-menu-container.style2 {
-    background: transparent;
-}
-
-.style2 .inline-menu li {
-    color: #FFF;
-    font-weight: 400;
-    line-height: 70px;
-}
-
-
-.style2.dark {
-	background-color: #F1F3F6
-}
-
-
-.style2.dark .inline-menu li {
-    color: #666;
-    font-size: 14px;
-    line-height: 40px;
-}
-
-.inline-menu-container.style3 {
-    background: #FFF;
-    border-bottom: 1px solid #eee;
-    height: 40px;
-}
-
-.sidebar-menu {
-    background: #111; 
-    height: 100%;
-    left: 0;
-    position: fixed; 
-    width: 20%;
-}
-
-.sidebar-menu.hidex {
-    opacity: 1;
-    visibility: visible;
-    z-index: 1;
-}
-
-.menu4 .inline-menu {
-    margin-right: 0;
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.menu4 .inline-menu li {
-    color: #787878;
-    display: block;
-    font-size: 20px;
-    font-weight: 300;
-    line-height: 60px;
-    padding: 0 0 0 30px;
-}
-
-.menu4 .inline-menu li.active {
-    color: #FFF;
-}
-
-.close-pop {
-    background-color: #F1F3F6;
-    cursor: pointer;
-    line-height: 40px;
-    height: 40px;
-    position: fixed;
-    text-align: center;
-    width: 69%;
-    right: 13px;
-    top:-60px;
-    transition: all 0.7s;
-    z-index: 1;
-}
-
-.menu4 .close-pop {
-    width: 79%;
-}
-
-.close-pop:hover {
-    opacity: 0.7;
-}
-
-.content-blocks.pop.showx .close-pop {
-	top: 0;
-}
-
 /*-------------------------------------------------------------------
 
                         4. Page Content
@@ -642,7 +461,7 @@ h2.menu-item:after {
 
 .content {
     position: relative;
-    padding: 120px 70px 30px;
+    padding: 50px 50px;
     height: auto;
     overflow: hidden;
 }
@@ -673,16 +492,8 @@ h2.menu-item:after {
 }
 
 .title {
-    font-size: 24px;
-    text-transform: uppercase;
-    color: #333;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 30px;
+    color: #0a66c2;
     font-weight: 600;
-    -webkit-text-fill-color: transparent !important;
-    -webkit-background-clip: text !important;
-    background: rgb(12, 180, 206) 9%;
 }
 
 /*-------------------------------------------------------------------
@@ -786,12 +597,6 @@ h2.menu-item:after {
     bottom: 15%;
 }
 
-.social li {
-    display: inline-block;
-    margin-right: 2px;
-    text-align: center;
-}
-
 .social a {
     border: 2px solid #FFF;
     color: #FFF;
@@ -799,11 +604,6 @@ h2.menu-item:after {
     height: 35px;
     width: 35px;
     transition: all 0.5s;
-}
-
-.social li i {
-    line-height: 32px;
-    font-size: 12px;
 }
 
 .social a:hover {
@@ -936,19 +736,6 @@ h2.menu-item:after {
     font-weight: 300;
 }
 
-.icon-list li {
-    padding-left: 25px;
-}
-
-.icon-list li:before {
-    position: absolute;
-    content: '\f3fd';
-    font-family: 'Ionicons';
-    font-size: 24px;
-    left: 20px;
-    color: #666;
-}
-
 .timeline {
     position: relative;
 }
@@ -965,7 +752,7 @@ h2.menu-item:after {
 }
 
 .timeline:after {
-    font-family: 'Ionicons';
+    font-family: 'FontAwesome';
     top: 0;
     left: -5px;
     width: 50px;
@@ -978,11 +765,11 @@ h2.menu-item:after {
 }
 
 .timeline.experience:after {
-    content: '\f348';
+    content: '\f1ad';
 }
 
 .timeline.education:after {
-    content: '\f357';
+    content: '\f19d';
 }
 
 .exp {
@@ -1180,16 +967,8 @@ h2.menu-item:after {
         font-size: 26px;
         min-height: 26px;
     }
-    .inline-menu-container {
-        font-size: 14px;
-        right: 10px;
-        width: 69%;
-    }
-    .inline-menu li {
-        padding: 0 10px;
-    }
     .content {
-        padding: 120px 50px 50px;
+        padding: 50px 50px;
     }
 }
 
@@ -1220,7 +999,7 @@ h2.menu-item:after {
     }
 }
 
-@media (max-width:980px) {
+/* @media (max-width:980px) {
     .inline-menu {
         margin-top: 5px;
     }
@@ -1238,7 +1017,7 @@ h2.menu-item:after {
     .exp {
         padding-left: 0;
     }
-}
+} */
 
 @media (max-width:800px) and (orientation:landscape) {
     .name-block,
@@ -1291,19 +1070,6 @@ h2.menu-item:after {
     }
     .sidebar-menu.hidex {
         top: -60px;
-    }
-    .menu4 .inline-menu {
-        position: relative;
-        text-align: center;
-        margin-top: 0;
-        width: 100%;
-    }
-    .menu4 .inline-menu li {
-        color: #f5f5f5;
-        font-size: 16px;
-        display: inline-block;
-        line-height: 50px;
-        padding: 0 10px;
     }
     .name-block {
         padding-top: 30px;
@@ -1388,7 +1154,7 @@ h2.menu-item:after {
         display: none;
     }
     .content {
-        padding: 100px 20px 50px;
+        padding: 50px 50px;
     }
     .content-blocks.pop.showx {
         top: 0;
@@ -1411,10 +1177,6 @@ h2.menu-item:after {
     }
     .filters span {
         display: none;
-    }
-    .filters ul li {
-        font-size: 14px;
-        padding: 2px 5px 2px 0;
     }
     .name-block-container h1 span {
         font-size: 22px;
@@ -1469,10 +1231,6 @@ h2.menu-item:after {
 }
 
 @media (max-width:576px) {
-    .menu4 .inline-menu li {
-        font-size: 14px;
-        padding: 0 7px;
-    }
     .single-post-title h1 {
         font-size: 40px;
     }
@@ -1505,18 +1263,6 @@ h2.menu-item:after {
 }
 
 @media (max-width:320px) {
-  .inline-menu {
-    margin-right: 0;
-  }
-  .inline-menu li {
-      padding: 0 8px;
-  }
-    .menu4 .inline-menu li {
-        padding: 0 5px;
-    }
-  .filters ul li {
-    margin-left: 5px;
-  }
     .project-nav span {
         display: block;
         width: 100%;
