@@ -10,7 +10,7 @@ body, html {
     font: 400 14px 'Poppins', sans-serif;
     -webkit-font-smoothing: antialiased;
     line-height: 30px;
-    color: #727272;
+    color: #727272 !important;
     background: #eee;
     font-size: 16px;
     font-weight: 300;
@@ -76,9 +76,8 @@ h3,
 h4,
 h5,
 h6 {
-    text-transform: uppercase;
     font-weight: 500;
-    color: #333;
+    color: #333 !important;
     letter-spacing: 1px;
 }
 
@@ -493,7 +492,7 @@ h2.menu-item:after {
 }
 
 .title {
-    color: #0a66c2;
+    color: #0a66c2 !important;
     font-weight: 600;
 }
 
@@ -600,7 +599,7 @@ h2.menu-item:after {
 
 .social a {
     border: 2px solid #FFF;
-    color: #FFF;
+    color: #FFF !important;
     display: inline-block;
     height: 35px;
     width: 35px;
@@ -608,9 +607,9 @@ h2.menu-item:after {
 }
 
 .social a:hover {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.7) !important;
     border: 2px solid transparent;
-    color: #333;
+    color: #333 !important;
 }
 
 .dark .social a {
@@ -742,7 +741,7 @@ h2.menu-item:after {
 }
 
 .timeline:before {
-    background: #ddd;
+    background: #ddd !important;
     bottom: 0;
     content: "";
     left: 18px;
@@ -760,7 +759,7 @@ h2.menu-item:after {
     height: 50px;
     position: absolute;
     text-align: center;
-    color: #ddd;
+    color: #ddd !important;
     font-size: 36px;
     line-height: 45px;
 }
@@ -809,7 +808,7 @@ h2.menu-item:after {
 
 .exp .hgroup h5 {
     font-size: 10px;
-    color: #fff;
+    color: #fff !important;
     margin: 7px 20px 10px;
 }
 
@@ -1267,5 +1266,21 @@ h2.menu-item:after {
     .project-nav span {
         display: block;
         width: 100%;
+    }
+}
+
+@media print {
+    * {
+        -webkit-print-color-adjust: exact;
+    }
+    .badge {
+        background-color: #777 !important;
+        border-radius: 10px !important;
+    }
+    .badge , .current {
+        color: #fff !important;
+    }
+    .page-break {
+        page-break-after: always;
     }
 }
